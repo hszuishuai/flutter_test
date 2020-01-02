@@ -5,8 +5,14 @@ class SerachField extends StatelessWidget {
   final VoidCallback onTab;
   final String hintText;
   final EdgeInsetsGeometry margin;
+  final bool autofocus;
   const SerachField(
-      {Key key, this.hintText, this.onSubmitted, this.onTab, this.margin})
+      {Key key,
+      this.hintText,
+      this.onSubmitted,
+      this.onTab,
+      this.margin,
+      this.autofocus = false})
       : super(key: key);
 
   @override
@@ -21,6 +27,7 @@ class SerachField extends StatelessWidget {
       child: TextField(
           onSubmitted: onSubmitted,
           onTap: onTab,
+          autofocus: autofocus,
           cursorColor: Color.fromARGB(255, 0, 187, 237),
           style: TextStyle(fontSize: 17),
           decoration: InputDecoration(

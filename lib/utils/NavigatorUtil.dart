@@ -19,7 +19,7 @@ class NavigatorUtil {
 
   //登入页面
   static void goLoginPage(BuildContext context) {
-    _navigateTo(context, Routes.login, replace: true);
+    _navigateTo(context, Routes.login);
   }
 
   //首页
@@ -30,5 +30,10 @@ class NavigatorUtil {
   //
   static void goContainPage(BuildContext context) {
     _navigateTo(context, Routes.container, replace: true);
+  }
+
+  //搜索页面
+  static void goSerachPage(BuildContext context) {
+    _navigateTo(context, Routes.serach);
   }
 }

@@ -6,6 +6,7 @@ import 'package:flutter_01/widgets/radius.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_01/widgets/load_footer.dart';
 import 'package:flutter_easyrefresh/delivery_header.dart';
+import 'package:flutter_01/utils/NavigatorUtil.dart';
 
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart'
     as extended;
@@ -73,7 +74,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: SerachField(
                     hintText: '影视作品中你难忘的离别',
                     margin: EdgeInsets.only(left: 15.0, right: 15.0),
-                    onTab: () {},
+                    onTab: () {
+                      NavigatorUtil.goSerachPage(context);
+                    },
                   ),
                   alignment: Alignment(0.0, 0.0),
                 ),
@@ -179,7 +182,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 
-  Widget _buildView() {
+  _buildView() {
     return EasyRefresh.custom(
       header: DeliveryHeader(
         backgroundColor: Colors.grey[100],
@@ -214,11 +217,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 
-  Widget getComonItem(Subject item) {
-    print("item $item");
+  getComonItem(Subject item) {
+    print("item22 $item");
     return Container(
       height: 350,
-      color: Colors.white,
+      color: Theme.of(context).scaffoldBackgroundColor,
       //margin: EdgeInsets.only(bottom: 10),
       padding: EdgeInsets.all(10),
       child: Column(
@@ -235,7 +238,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 padding: EdgeInsets.only(left: 10),
                 child: Text(
                   item.title,
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  style: TextStyle(
+                      color: Theme.of(context).textTheme.body2.color,
+                      fontSize: 16),
                 ),
               ),
               Expanded(

@@ -5,6 +5,7 @@ import 'package:flutter_01/pages/login.dart';
 import 'package:flutter_01/pages/splash.dart';
 import 'package:flutter_01/pages/Home/Home.dart';
 
+import 'package:flutter_01/pages/search/serach.dart';
 import 'package:flutter_01/pages/container.dart';
 
 var loginHandler = new Handler(
@@ -25,4 +26,9 @@ var homeHandler = new Handler(
 var containerHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
   return ContainerPage();
+});
+
+var serachHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
+  return SerachPage();
 });
